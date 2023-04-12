@@ -10,3 +10,31 @@ function isPrime(num) {
     if (num % i == 0 || num % (i + 2) == 0) return false;
   return true;
 }
+function doubleNumbers(data){
+  let doubledData = []
+  for (let i = 0; i < data.length; i++){
+    doubledData.push(data[i] * 2)
+  }
+  return doubledData
+}
+function filterPrime(data){
+  let primeNumbers = []
+  for (let i =0; i < data.length; i++){
+    if (isPrime(data[i]) === true){
+      primeNumbers.push(data[i])
+    }
+  }
+  return primeNumbers
+}
+function convertArrayPrime(data){
+ let convertedArray = []
+  let newElement = []
+  newElement.push(filterPrime(data))
+  newElement.forEach((number) =>{
+    convertedArray.push('number' + number)
+  })
+  return convertedArray
+}
+//console.log(doubleNumbers(data))
+//console.log(filterPrime(data).sort((a, b) => a - b))
+console.log(convertArrayPrime(data))
